@@ -30,6 +30,11 @@ hr {
     margin-bottom: 2rem;
 }
 
+.list-group-item-action.active {
+    background-color: darkturquoise;
+    border-color: rgba(86, 61, 124, .2);
+}
+
 .marquee {
     width: 100%;
     white-space: nowrap;
