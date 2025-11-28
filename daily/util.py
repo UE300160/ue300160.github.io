@@ -17,6 +17,24 @@ codons = {
     "UGG": "W", "CGG": "R", "AGG": "R", "GGG": "G"
 }
 
+def parse_fasta(lines_list):
+    current_sequence = ''
+    current_id = ''
+    sequences = {}
+
+    for line in lines_list:
+        # if line.startswith('>'):
+        if line[0] == '>':
+            sequences[current_id] = current_sequence
+            current_id = line[1:]
+            current_sequence = ''
+        else:
+            current_sequence = current_sequence + line
+
+    sequences[current_id] = current_sequence
+    del sequences['']
+    return sequences
+
 def read_file_into_lines(file_path):
     """
     A simple function to read a file into
@@ -41,3 +59,17 @@ def read_file_into_lines(file_path):
             lines.append(cleaned)
     return lines
 
+def read_fasta(fasta_file):
+    lines = read_file_into_lines(fasta_file)
+    fasta = parse_fasta(lines)
+    return fasta
+
+def reverse_complement(rna):
+    # the reverse complement:
+    revc = rna[::-1]
+    revc = revc.replace('A', 'u')
+    revc = revc.replace('U', 'a')
+    revc = revc.replace('G', 'c')
+    revc = revc.replace('C', 'g')
+    revc = revc.upper()
+    return revc
