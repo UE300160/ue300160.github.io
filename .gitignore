@@ -1,4 +1,6 @@
 daily/.ipynb_checkpoints
 *_data/*
+!/_data/*
 */__pycache__
 rosalind/test.txt
+_site/

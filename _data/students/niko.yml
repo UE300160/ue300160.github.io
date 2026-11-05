@@ -1,0 +1,7 @@
+# File name must be your GitHub username, e.g. _data/students/galicae.yml
+name: Niko
+github: galicae
+homework: https://github.com/galicae/aoc-2023
+rosalind: platynereis
+# Latest Python highlight. Wrap in quotes; HTML like <code>len</code> is allowed.
+lph: "taught students how to use <code>len</code>"
