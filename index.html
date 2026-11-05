@@ -65,7 +65,14 @@
             and open a pull request. To update your entry later, click ✏️ on your card. Only ever edit your own file!
         </p>
 
+        <p>
+            Advent of Code stars are matched to you by your GitHub username. If your card shows no stars a day after
+            you joined the course leaderboard, add <code>aoc: 1234567</code> (your Advent of Code user ID) to your file.
+        </p>
+
         <div class="student-grid">
+            {% assign rosalind_target = 21 %}
+            {% assign aoc_target = 8 %}
             {% assign students = site.data.students | sort %}
             {% for entry in students %}
             {% assign s = entry[1] %}
@@ -75,8 +82,24 @@
                     <div class="list-group-item link-buttons">
                         <a href="https://github.com/{{ s.github }}" class="btn btn-outline-secondary" title="GitHub profile"><img src="assets/github.png" alt="GitHub profile"></a>
                         {% if s.homework %}<a href="{{ s.homework }}" class="btn btn-outline-secondary" title="Python homework repository"><img src="assets/python.png" alt="Python homework repository"></a>{% endif %}
-                        {% if s.rosalind %}<a href="https://rosalind.info/users/{{ s.rosalind }}" class="btn btn-outline-secondary" title="Rosalind profile"><img src="assets/rosalind.png" alt="Rosalind profile"></a>{% endif %}
                     </div>
+                    {% if s.rosalind %}
+                    <div class="list-group-item link-buttons">
+                        {% assign solved = site.data.rosalind[s.rosalind] %}
+                        {% if solved %}
+                        {% assign rosalind_url = "https://rosalind.info/users/" | append: s.rosalind %}
+                        {% include progress-button.html value=solved target=rosalind_target icon="assets/rosalind.png" label="Rosalind problems solved" url=rosalind_url %}
+                        {% else %}
+                        <a href="https://rosalind.info/users/{{ s.rosalind }}" class="btn btn-outline-secondary" title="Rosalind profile"><img src="assets/rosalind.png" alt="Rosalind profile"></a>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    {% assign stars = site.data.aoc[s.github] %}
+                    {% if stars %}
+                    <div class="list-group-item link-buttons">
+                        {% include progress-button.html value=stars target=aoc_target icon="assets/aoc.png" label="Advent of Code stars" %}
+                    </div>
+                    {% endif %}
                     <a class="list-group-item list-group-item-action"> 👑 {{ s.lph }} </a>
                 </div>
                 <a class="edit-link" href="https://github.com/UE300160/ue300160.github.io/edit/main/_data/students/{{ entry[0] }}.yml" title="Edit this entry">✏️</a>

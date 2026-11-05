@@ -1,0 +1,11 @@
+{% comment %}
+Button with a background bar filled to value/target.
+Parameters: value, target, icon, label, url (optional; without it the bar is not a link).
+{% endcomment %}
+{% assign fill = include.value | times: 100 | divided_by: include.target %}
+{% if fill > 100 %}{% assign fill = 100 %}{% endif %}
+{% if include.url %}
+<a href="{{ include.url }}" class="btn btn-outline-secondary progress-button" style="--fill: {{ fill }}%" title="{{ include.label }}: {{ include.value }}/{{ include.target }}"><img src="{{ include.icon }}" alt="{{ include.label }}"> {{ include.value }}/{{ include.target }}</a>
+{% else %}
+<span class="btn btn-outline-secondary progress-button" style="--fill: {{ fill }}%" title="{{ include.label }}: {{ include.value }}/{{ include.target }}"><img src="{{ include.icon }}" alt="{{ include.label }}"> {{ include.value }}/{{ include.target }}</span>
+{% endif %}
