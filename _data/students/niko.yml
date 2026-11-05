@@ -1,4 +1,4 @@
-# File name must be your GitHub username, e.g. _data/students/galicae.yml
+# File name is your first name, e.g. _data/students/anna.yml (if taken, add your last initial: anna-k.yml)
 name: Niko
 github: galicae
 homework: https://github.com/galicae/aoc-2023
