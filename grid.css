@@ -99,3 +99,7 @@ hr {
     width: 1.5rem;
     object-fit: contain;
 }
+
+.link-buttons .progress-button {
+    background: linear-gradient(to right, rgba(0, 206, 209, 0.4) var(--fill), transparent var(--fill));
+}
