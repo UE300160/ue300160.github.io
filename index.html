@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en">
 
@@ -38,7 +40,7 @@
                     <a class="nav-link" href="https://galicae.github.io/python-novice/" style="color: yellow">Python Course</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/galicae/python-novice" style='color: darkturquoise''>Python Course repo</a>
+                    <a class="nav-link" href="https://github.com/galicae/python-novice" style='color: darkturquoise'>Python Course repo</a>
                 </li>
             </ul>
         </div>
@@ -55,166 +57,31 @@
             that was easy in retrospect but you struggled to achieve, or something that you found very elegant.
         </p>
 
-        <div class="row">
-            <div class="col-3">
-                <div class="list-group">
-                    
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
+        <p>
+            To add yourself, <a href="https://github.com/UE300160/ue300160.github.io/new/main/_data/students?filename=yourfirstname.yml">create
+            a file</a> named after your first name in <code>_data/students/</code>, e.g. <code>anna.yml</code>.
+            If that name is already taken, add your last initial, e.g. <code>anna-k.yml</code> (copy
+            <a href="https://github.com/UE300160/ue300160.github.io/blob/main/_data/students/niko.yml">this example</a>)
+            and open a pull request. To update your entry later, click ✏️ on your card. Only ever edit your own file!
+        </p>
 
-                </div>
-            </div>
-            <div class="col-3">
+        <div class="student-grid">
+            {% assign students = site.data.students | sort %}
+            {% for entry in students %}
+            {% assign s = entry[1] %}
+            <div class="student-card">
                 <div class="list-group">
-                    <a href="https://github.com/clexerin" class="list-group-item list-group-item-action active"> Liwia (clexerin) </a>
-                    <a href="https://github.com/clexerin/python_homework_Liwia_Zdrzalka" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/clexerin" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 👑 solved aoc4. it took me 4 hours, but I made it. </a>
+                    <div class="list-group-item active"> {{ s.name }} ({{ s.github }}) </div>
+                    <div class="list-group-item link-buttons">
+                        <a href="https://github.com/{{ s.github }}" class="btn btn-outline-secondary" title="GitHub profile"><img src="assets/github.png" alt="GitHub profile"></a>
+                        {% if s.homework %}<a href="{{ s.homework }}" class="btn btn-outline-secondary" title="Python homework repository"><img src="assets/python.png" alt="Python homework repository"></a>{% endif %}
+                        {% if s.rosalind %}<a href="https://rosalind.info/users/{{ s.rosalind }}" class="btn btn-outline-secondary" title="Rosalind profile"><img src="assets/rosalind.png" alt="Rosalind profile"></a>{% endif %}
+                    </div>
+                    <a class="list-group-item list-group-item-action"> 👑 {{ s.lph }} </a>
                 </div>
+                <a class="edit-link" href="https://github.com/UE300160/ue300160.github.io/edit/main/_data/students/{{ entry[0] }}.yml" title="Edit this entry">✏️</a>
             </div>
-            <div class="col-3">
-                <div class="list-group">
-                    <a href="https://github.com/lynnw00" class="list-group-item list-group-item-action active"> Lynn (lynnw00) </a>
-                    <a href="https://github.com/lynnw00/python_homework.git" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/lynnw00/" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 👑 Working hard to catch up on some of the challenges, it is quite doable! Also waiting for the bash retrospective in Moodle to allow me to do the quiz. </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-3">
-                <div class="list-group">
-                    
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
-                    <a href="https://github.com/VolJer" class="list-group-item list-group-item-action active"> Jerneja Volmajer (VolJer) </a>
-                    <a href="https://github.com/VolJer/python_homework.git" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/JernejaV/" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 👑 Feeling bad for slacking off on AoC for the past week, but now my workload has lessened and I honestly can't wait do focus most of my attention on the challenges. Never thought something so frustrating could be so fun! </a>    
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
-                    
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-3">
-                <div class="list-group">
-                    <a href="https://github.com/alinchenxt" class="list-group-item list-group-item-action active"> 🐑 Alina (alinchenxt) </a>
-                    <a href="https://github.com/alinchenxt/python_hw.git" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/alinchen_xt/" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 👑 had to write about 20 functions to make day 4 part 2 work, but i guess practicing functions can count as a good thing? </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
-                   <a href="https://github.com/LauraT01" class="list-group-item list-group-item-action active"> Laura (LauraT01) </a>
-                    <a href="https://github.com/LauraT01/python_hw_laura" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/LauraT01/" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 👑 after brainstorming AoC Day 9 (Part 1!) the solution was pretty easy to code </a> 
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
-                    <a href="https://github.com/zdenkakerner" class="list-group-item list-group-item-action active"> Zdenka (zdenkakerner) </a>
-                    <a href="https://github.com/zdenkakerner/Python-homework.git" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/zdenkakerner/" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 👑 When I started to approach AoC as a challenge rather than an obligation then the game changed for me and I actually started to enjoy it. I am still behind but slowly getting back on track. </a>
-                    
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
-                   <a href="https://github.com/aleenaaah" class="list-group-item list-group-item-action active"> Aleena George(aleenaaah) </a>
-                    <a href="https://github.com/aleenaaah/python_homework" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/aleenaah/" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action">  👑 I learned a new method called pop. Now I can pop things from a list   </a>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-3">
-                <div class="list-group">
-                    
-                    
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
-                    <a href="https://github.com/sparklychilli" class="list-group-item list-group-item-action active"> Csilla (sparklychilli) </a>
-                    <a href="https://github.com/sparklychilli/python_hw.git" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/chilli_sin_carne/" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 👑Finally achieved 8 stars in aoc, the bigges win feels like Day1_2 which I spent hours debugging. My idea was right but the execution sloppy and I overlooked some edge cases👑  </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
-                    <a href="https://github.com/Mu-schel" class="list-group-item list-group-item-action active"> Stefan (Mu-schel) </a>
-                    <a href="https://github.com/Mu-schel/Python_homework_stefan" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/Mu_schel" class="list-group-item list-group-item-action"> 🧬 Mu_schel's Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 🪴 Did some Rosalind problems, with some cute while loops. Some of if felt easy, I'm happy with my progress. 🪴 </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
-                    <a href="https://github.com/danielmitic92-ctrl" class="list-group-item list-group-item-action active"> Daniel (danielmitic92-ctrl) </a>
-                    <a href="https://github.com/danielmitic92-ctrl/homework_daniel_2025" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/daniel_mitic/" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 👑 discovering pandas </a>
-                </div>
-            </div>
-        </div>
-
-    
-        <div class="row">
-            <div class="col-3">
-                <div class="list-group">
-                    <a href="https://github.com/gabiart9" class="list-group-item list-group-item-action active"> Gabi (gabiart9) </a>
-                    <a href="https://github.com/gabiart9/python_homework_gabi.git" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/gabiae/" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 👑 reading up on numpy arrays & grasping the basics (complexer things like adding dimensions are too abstract atm, would need to look into specific examples to really get it)  </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
-                    <a href="https://github.com/Weikang-cloud" class="list-group-item list-group-item-action active"> Weikang (Weikang-cloud) </a>
-                    <a href="https://github.com/Weikang-cloud/weikangpython" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/Weikang/" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 👑 Did more rosalind questions (in a complicated structure), trying to make my programm more readable and cleaner. </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
-                    <a href="https://github.com/greensnake01" class="list-group-item list-group-item-action active"> Boris Guspan (greensnake01) </a>
-                    <a href="https://github.com/greensnake01/python_homework" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/greensnake01/" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 👑 After couple of weeks of coding mostly in R because of the duties from other courses, I returned back to python to finish one of the rosalind exercises. At the moment, I can clearly see the similarities and differences between R and python, which helped me to better understand the programming language (as a general concept - syntax, structuring, using functions). I was successful in finishing ORF and I have managed it completely on my own with just a python cheatsheet, the notebook is uploaded on my github. I am very glad for learning how to utilise the functions more instead of creating a huge chunk of code, which can be often more time consuming to debug. :)  </a>
-                    
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="list-group">
-                    <a href="https://github.com/claudiamameli" class="list-group-item list-group-item-action active"> Claudia Mameli (claudiamameli) </a>
-                    <a href="https://github.com/claudiamameli/python_hw_CM" class="list-group-item list-group-item-action"> 🐍 Python homework </a>
-                    <a href="https://rosalind.info/users/claudymm/" class="list-group-item list-group-item-action"> 🧬 Rosalind Profile </a>
-                    <a class="list-group-item list-group-item-action"> 👑 Learning about arrays and numpy has been great, need to learn more to make my code faster and maybe my kernels won't keep dying! </a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div> <!-- /container -->
 </body>

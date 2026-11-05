@@ -18,11 +18,30 @@ h1 {
     margin-bottom: 0;
 }
 
-[class*="col-"] {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.student-card {
+    position: relative;
+    padding: 1rem;
     background-color: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(86, 61, 124, .2);
+}
+
+.edit-link {
+    position: absolute;
+    top: 0;
+    right: 0.25rem;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.edit-link:hover {
+    text-decoration: none;
 }
 
 hr {
@@ -30,7 +49,7 @@ hr {
     margin-bottom: 2rem;
 }
 
-.list-group-item-action.active {
+.list-group-item.active {
     background-color: darkturquoise;
     border-color: rgba(86, 61, 124, .2);
 }
@@ -65,4 +84,18 @@ hr {
 
 .gray-out {
     opacity: 0.3;
+}
+.link-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.link-buttons .btn {
+    flex: 1;
+}
+
+.link-buttons img {
+    height: 1.5rem;
+    width: 1.5rem;
+    object-fit: contain;
 }
