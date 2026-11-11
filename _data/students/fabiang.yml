@@ -1,7 +1,7 @@
 # File name is your first name, e.g. _data/students/anna.yml (if taken, add your last initial: anna-k.yml)
 name: Fabian Gnadlinger
 github: gnackig21
-homework: https://github.com/gnackig21/
+homework: https://github.com/gnackig21/python-homework
 rosalind: gnackig
 # Latest Python highlight. Wrap in quotes; HTML like <code>len</code> is allowed.
 lph: "get in to the repository"
