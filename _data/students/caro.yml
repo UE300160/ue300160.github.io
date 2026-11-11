@@ -5,5 +5,5 @@ github: carolinschatteiner
 homework: git@github.com:carolinschatteiner/
 rosalind: car0l1n_s
 # Latest Python highlight. Wrap in quotes; HTML like <code>len</code> is allowed.
-lph: " "
+lph: "learned new ways to work with strings "
 
