@@ -1,0 +1,7 @@
+# File name is your first name, e.g. _data/students/anna.yml (if taken, add your last initial: anna-k.yml)
+name: Thomas
+github: thomasStarkmann
+homework: https://github.com/thomasStarkmann/python-homework
+rosalind: thomas.starkmann
+# Latest Python highlight. Wrap in quotes; HTML like <code>len</code> is allowed.
+lph: "challenge INI3 completed"
