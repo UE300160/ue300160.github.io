@@ -4,4 +4,4 @@ github: laraweilharter
 homework: https://github.com/laraweilharter/python-homework.git
 rosalind: lara_weilharter
 # Latest Python highlight. Wrap in quotes; HTML like <code>len</code> is allowed.
-lph: "Solved INI3"
+lph: "Solved DNA and RNA exercise"
