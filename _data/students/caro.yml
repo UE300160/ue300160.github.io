@@ -1,0 +1,9 @@
+
+# File name is your first name, e.g. _data/students/anna.yml (if taken, add your last initial: anna-k.yml)
+name: Caro
+github: galicae
+git homework for python: git@github.com:carolinschatteiner/python_homework.git
+rosalind: car0l1n_s
+# Latest Python highlight. Wrap in quotes; HTML like <code>len</code> is allowed.
+lph: " "
+
