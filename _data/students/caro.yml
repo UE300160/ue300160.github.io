@@ -2,7 +2,7 @@
 # File name is your first name, e.g. _data/students/anna.yml (if taken, add your last initial: anna-k.yml)
 name: Caro
 github: carolinschatteiner
-homework: git@github.com:carolinschatteiner/
+homework: https://github.com/carolinschatteiner/python_homework
 rosalind: car0l1n_s
 # Latest Python highlight. Wrap in quotes; HTML like <code>len</code> is allowed.
 lph: "learned new ways to work with strings "
