@@ -3,4 +3,4 @@ github: stephanie-thurn
 homework: https://github.com/stephanie-thurn/python-homework.git
 rosalind: stephaniet
 # Latest Python highlight. Wrap in quotes; HTML like <code>len</code> is allowed.
-lph: "solved INI4 and INI5 without *major* problems"
+lph: "understood what .join does if we have a list"
