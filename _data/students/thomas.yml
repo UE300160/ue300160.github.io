@@ -4,4 +4,4 @@ github: thomasStarkmann
 homework: https://github.com/thomasStarkmann/python-homework
 rosalind: thomas.starkmann
 # Latest Python highlight. Wrap in quotes; HTML like <code>len</code> is allowed.
-lph: "challenge INI3 completed"
+lph: "mastered conditionals"
